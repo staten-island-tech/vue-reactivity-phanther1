@@ -2,7 +2,7 @@
     <div>
         <h2>{{  Destination.name }}</h2>
         <img :src="Destination.img" alt="">
-        <h3>{{ @clicked }}</h3>
+<!--         <h3>{{ @clicked }}</h3> -->
         <button>Click here</button>
     </div>
 </template>
@@ -31,3 +31,27 @@ function increment(){
     height: 300px;
  }
 </style>
+
+<!-- <script setup>
+import { ref } from 'vue'
+
+const count = ref(0)
+
+function increment() {
+  count.value++
+}
+  
+function decrement() {
+  count.value--
+}
+  
+  
+</script>
+
+<template>
+  <button @click="decrement">-</button>
+  <text> {{count}} </text>
+	<button @click="increment"> + </button>
+  
+  
+</template> -->
