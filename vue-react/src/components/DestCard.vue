@@ -1,57 +1,46 @@
 <template>
-    <div>
-        <h2>{{  Destination.name }}</h2>
-        <img :src="Destination.img" alt="">
-<!--         <h3>{{ @clicked }}</h3> -->
-        <button>Click here</button>
-    </div>
+  <div>
+    <h2>{{ Destination.name }}</h2>
+    <img :src="Destination.img" alt="" />
+    <h3>{{ clicked }}</h3>
+    <button @click="decrement"> - </button>
+    <button @click="increment"> + </button>
+  </div>
 </template>
 
 <script setup>
-import {ref} from "vue";
+import { ref } from "vue";
 const props = defineProps({
-    Destination: Object,
+  Destination: Object,
 });
 
 //clicker logic
-const clicked = ref(0);
-function increment(){
-    clicked.value++;
+let clicked = ref(0);
+function increment() {
+  clicked.value++;
 }
+
+function decrement() {
+clicked.value--;
+}
+decrement(); 
 </script>
 
 <style scoped>
-/* h1 {
+img {
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+}
+  /* h1 {
     color: red;  //only affects this file
 }
  */
-
- img {
-    width: 300px;
-    height: 300px;
- }
 </style>
 
-<!-- <script setup>
-import { ref } from 'vue'
-
-const count = ref(0)
-
-function increment() {
-  count.value++
-}
-  
-function decrement() {
-  count.value--
-}
-  
-  
-</script>
-
+<!--
 <template>
   <button @click="decrement">-</button>
   <text> {{count}} </text>
 	<button @click="increment"> + </button>
-  
-  
 </template> -->
