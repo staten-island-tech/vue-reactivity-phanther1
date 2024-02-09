@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cardSet">
     <h2>{{ Destination.name }}</h2>
     <img :src="Destination.img" alt="" />
     <h3>{{ clicked }}</h3>
@@ -30,7 +30,13 @@ decrement();
 img {
   width: 250px;
   height: 300px;
-  object-fit: cover;
+  display: flex;
+}
+.cardSet {
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 100vw;
 }
   /* h1 {
     color: red;  //only affects this file

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cards">
     <DestCard
       v-for="destination in destinations"
       :key="destination.name"
@@ -51,5 +51,7 @@ const destinations = [
 </script>
 
 <style scoped></style>
+
+
 
 <style scoped></style>
