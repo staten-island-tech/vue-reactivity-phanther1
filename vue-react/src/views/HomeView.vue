@@ -1,6 +1,6 @@
 <template>
   <div class="cards">
-    <DestCard
+    <cardSet
       v-for="destination in destinations"
       :key="destination.name"
       :Destination="destination"
@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import DestCard from "@/components/DestCard.vue";
+import cardSet from "@/components/DestCard.vue";
 const destinations = [
   {
     name: "Venetian Renaissance",
@@ -52,6 +52,8 @@ const destinations = [
 
 <style scoped></style>
 
-
+cardset {
+  
+}
 
 <style scoped></style>

@@ -23,7 +23,6 @@ function increment() {
 function decrement() {
 clicked.value--;
 }
-decrement(); 
 </script>
 
 <style scoped>
