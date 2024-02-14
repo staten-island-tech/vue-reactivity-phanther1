@@ -52,8 +52,4 @@ const destinations = [
 
 <style scoped></style>
 
-cardset {
-  
-}
-
 <style scoped></style>

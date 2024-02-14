@@ -1,17 +1,19 @@
 <template>
+  <div class="flexbox">
   <div class="cardSet">
     <h2>{{ Destination.name }}</h2>
     <img :src="Destination.img" alt="" />
     <h3>{{ clicked }}</h3>
-    <button @click="decrement"> - </button>
-    <button @click="increment"> + </button>
+    <button @click="store.decrement()"> - </button>
+    <button @click="store.increment()"> + </button>
   </div>
+</div>
 </template>
 
 <script setup>
 import { ref } from "vue";
 const props = defineProps({
-  Destination: Object,
+Destination: Object,
 });
 
 //clicker logic
@@ -29,7 +31,12 @@ clicked.value--;
 img {
   width: 250px;
   height: 300px;
+}
+
+.flexbox {
   display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100vw;
 }
 .cardSet {
   flex-wrap: wrap;
