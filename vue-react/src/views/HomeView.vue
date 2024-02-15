@@ -1,5 +1,5 @@
 <template>
-  <div class="cards">
+    <div class="flexbox">
     <cardSet
       v-for="destination in destinations"
       :key="destination.name"
@@ -50,6 +50,14 @@ const destinations = [
 ];
 </script>
 
-<style scoped></style>
+<style scoped>
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-basis: 100vw;
+  width: 100vw;
+} 
 
-<style scoped></style>
+</style>

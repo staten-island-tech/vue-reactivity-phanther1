@@ -1,17 +1,16 @@
 <template>
-  <div class="flexbox">
   <div class="cardSet">
     <h2>{{ Destination.name }}</h2>
     <img :src="Destination.img" alt="" />
     <h3>{{ clicked }}</h3>
-    <button @click="store.decrement()"> - </button>
-    <button @click="store.increment()"> + </button>
+    <button @click="decrement()"> - </button>
+    <button @click="increment()"> + </button>
   </div>
-</div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { store } from "@/views/store";
 const props = defineProps({
 Destination: Object,
 });
@@ -35,6 +34,7 @@ img {
 
 .flexbox {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   flex-basis: 100vw;
 }
@@ -42,7 +42,9 @@ img {
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  flex-basis: 100vw;
+  justify-content: space-around;
+  width: 20vw;
+  
 }
   /* h1 {
     color: red;  //only affects this file

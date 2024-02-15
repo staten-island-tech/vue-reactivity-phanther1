@@ -15,6 +15,8 @@ import { RouterLink, RouterView } from 'vue-router'
     </div> -->
   </header>
 
+  <DestCard />
+  <CheckOut />
   <RouterView />
 </template> 
 

@@ -1,15 +1,8 @@
 import { reactive } from 'vue'
+import { ref } from "vue";
+let clicked = ref(0);
 
-export const add = reactive({
+export const store = reactive({
   count: 0,
-  increment() {
-    this.count++
-  }
+  
 })
-
-export const subtract = reactive({
-    count: 0,
-    decrement() {
-      this.count--
-    }
-  })        
