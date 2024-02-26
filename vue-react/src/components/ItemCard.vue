@@ -1,7 +1,8 @@
 <template>
   <div class="cardSet">
-    <h2>{{ Destination.name }}</h2>
-    <img :src="Destination.img" alt="" />
+    <h2>{{ Tank.name }}, {{ Tank.nation }}</h2>
+    <img :src="Tank.img" alt="" />
+    <h3>Tank Price: {{ Tank.price }}</h3>
     <h3>{{ clicked }}</h3>
     <button @click="decrement()"> - </button>
     <button @click="increment()"> + </button>
@@ -12,7 +13,7 @@
 import { ref } from "vue";
 import { store } from "@/views/store";
 const props = defineProps({
-Destination: Object,
+Tank: Object,
 });
 
 //clicker logic
@@ -22,7 +23,14 @@ function increment() {
 }
 
 function decrement() {
-clicked.value--;
+
+if ( 
+  clicked.value = 0
+  
+)
+else (
+  clicked.value--
+);
 }
 </script>
 
@@ -39,11 +47,12 @@ img {
   flex-basis: 100vw;
 }
 .cardSet {
+  text-align: center;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  width: 20vw;
+  width: 20%;
   
 }
   /* h1 {
