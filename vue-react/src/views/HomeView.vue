@@ -59,7 +59,9 @@ const tanks = [
   flex-wrap: wrap;
   justify-content: space-around;
   flex-basis: 100vw;
-  width: 100vw;
+  width: 70vw;
 } 
+
+
 
 </style>

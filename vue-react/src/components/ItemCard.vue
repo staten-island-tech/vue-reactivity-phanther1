@@ -11,7 +11,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { store } from "@/views/store";
+
 const props = defineProps({
 Tank: Object,
 });
@@ -23,15 +23,16 @@ function increment() {
 }
 
 function decrement() {
-
-if ( 
+clicked.value++
+}
+/* if ( 
   clicked.value = 0
   
 )
 else (
   clicked.value--
 );
-}
+} */
 </script>
 
 <style scoped>
