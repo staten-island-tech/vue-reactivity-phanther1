@@ -1,4 +1,5 @@
-import { reactive } from 'vue'
+import { TO_HANDLER_KEY } from '@vue/compiler-core';
+import { reactive, toHandlerKey, toValue } from 'vue'
 import { ref } from "vue";
 let clicked = ref(0);
 
@@ -12,3 +13,9 @@ function increment() {
 //decrement
 
 //cart
+
+const cart = function () {
+}
+
+//price
+

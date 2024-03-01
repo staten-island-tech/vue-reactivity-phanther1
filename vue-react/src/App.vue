@@ -18,7 +18,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
   <ItemCard />
   
-  <RouterLink to="/CheckOut"></RouterLink>
+  <RouterLink to="/HomeView"></RouterLink>
   <CheckOut />
   <RouterView />
 </template> 

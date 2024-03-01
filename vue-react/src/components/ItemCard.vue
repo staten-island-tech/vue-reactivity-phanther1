@@ -20,10 +20,12 @@ Tank: Object,
 let clicked = ref(0);
 function increment() {
   clicked.value++;
+  cardSet.Tank.push(el)
+
 }
 
 function decrement() {
-clicked.value++
+clicked.value--
 }
 /* if ( 
   clicked.value = 0
@@ -46,6 +48,7 @@ img {
   flex-direction: row;
   flex-wrap: wrap;
   flex-basis: 100vw;
+  width: 80%;
 }
 .cardSet {
   text-align: center;
