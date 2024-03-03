@@ -1,35 +1,27 @@
 <template>
-<div class="cartSet">
-    <h2>{{ Tank.name }}, {{ Tank.nation }}</h2>
-    <img :src="Tank.img" alt="" />
-    <h3>Tank Price: {{ Tank.price }}</h3>
-    <h3>{{ clicked }}</h3>
-    <button @click="decrement()"> - </button>
-    <button @click="increment()"> + </button>
-    <button @click="remove()"> remove </button>
+  <div class="cart">
+    <h2>Shopping Cart</h2>
+      <h4 v-for="(item, index) in store.cart" :key="index">
+        {{ item.name }}, {{ item.nation }} <br> Quantity: {{ item.quantity }} <br> Price: {{ item.price * item.quantity }} <br>
+        <button @click="removeFromCart(index)">Remove</button>
+      </h4>
+      <h3>Total: {{ calculateTotal() }} silver lions</h3>
   </div>
-<h2> {{ price.total }}</h2>
 </template>
 
 <script setup>
+import { toRefs } from 'vue';
+import { store, removeFromCart } from '@/components/store';
+const { cart } = toRefs(store);
 
-const cart = 0;
-cardSet.Tank.push(el)
-
-
-function remove() {
-}
-
-const total = function () {
-    Tank.price.push = total;
-    
-}
-
+const calculateTotal = () => {
+  return store.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+};
 
 </script>
 
 <style scoped>
-.cartSet {
+.cart {
 display: flex;
 width: 20%;
 flex-direction: column;

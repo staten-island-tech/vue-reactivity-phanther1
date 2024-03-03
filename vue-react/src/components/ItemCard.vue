@@ -1,47 +1,41 @@
 <template>
   <div class="cardSet">
     <h2>{{ Tank.name }}, {{ Tank.nation }}</h2>
-    <img :src="Tank.img" alt="" />
+    <img :src="Tank.img" alt="Tank.img" />
     <h3>Tank Price: {{ Tank.price }}</h3>
-    <h3>{{ clicked }}</h3>
+    <h3>Add: {{ clicked }}</h3>
     <button @click="decrement()"> - </button>
     <button @click="increment()"> + </button>
+    <button @click="addToCart()"> Add to Cart </button>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineProps } from 'vue';
+import { cartValue } from '@/components/store';
 
 const props = defineProps({
-Tank: Object,
+  Tank: Object,
 });
 
-//clicker logic
 let clicked = ref(0);
+
 function increment() {
   clicked.value++;
-  cardSet.Tank.push(el)
-
 }
 
 function decrement() {
-clicked.value--
+  clicked.value = Math.max(clicked.value - 1, 0);
 }
-/* if ( 
-  clicked.value = 0
-  
-)
-else (
-  clicked.value--
-);
-} */
+
+function addToCart() {
+  cartValue({ name: props.Tank.name, price: props.Tank.price, nation: props.Tank.nation, quantity: clicked.value });
+  clicked.value = 0;
+}
 </script>
 
+
 <style scoped>
-img {
-  width: 250px;
-  height: 300px;
-}
 
 .flexbox {
   display: flex;
@@ -57,17 +51,12 @@ img {
   align-items: center;
   justify-content: space-around;
   width: 20%;
-  
 }
-  /* h1 {
-    color: red;  //only affects this file
-}
- */
-</style>
 
-<!--
-<template>
-  <button @click="decrement">-</button>
-  <text> {{count}} </text>
-	<button @click="increment"> + </button>
-</template> -->
+img {
+  width: 250px;
+  height: 300px;
+  display: flex;
+}
+
+</style>

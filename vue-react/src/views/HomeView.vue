@@ -5,11 +5,14 @@
       :key="tank.name"
       :Tank="tank"
     />
+    <CheckOut />
   </div>
 </template>
 
 <script setup>
 import cardSet from "@/components/ItemCard.vue";
+import CheckOut from "@/components/CheckOut.vue";
+import { store } from "@/components/store.js";
 const tanks = [
   {
     name: "M4",
@@ -19,31 +22,31 @@ const tanks = [
   },
   {
     name: "Swiss Mountain Getaway",
-    nation: true,
+    nation: "true",
     price: 800,
     img: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1476&q=80&quot;",
   },
   {
     name: "Ibizan Coastal Vacation",
-    nation: true,
+    nation: "true",
     price: 1200,
     img: "https://images.unsplash.com/photo-1547138494-97041dec734b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80&quot;",
   },
   {
     name: "Hawaiian Vacation",
-    nation: false,
+    nation: "false",
     price: 900,
     img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1173&q=80&quot;",
   },
   {
     name: "Cascade Mountains",
-    nation: false,
+    nation: "false",
     price: 400,
     img: "https://images.unsplash.com/photo-1511497584788-876760111969?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80&quot;",
   },
   {
     name: "Egyptian Exploration",
-    nation: true,
+    nation: "true",
     price: 800,
     img: "https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80&quot;",
   },
@@ -59,9 +62,6 @@ const tanks = [
   flex-wrap: wrap;
   justify-content: space-around;
   flex-basis: 100vw;
-  width: 70vw;
-} 
-
-
-
+  width: 70%;
+}
 </style>
