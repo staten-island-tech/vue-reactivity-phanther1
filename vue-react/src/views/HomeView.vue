@@ -2,6 +2,7 @@
   <div class="header">
     <h1>War Thunder Tank Sale</h1>
     <h2>BEWARE, DON'T SPEND MORE THAN 1 MILLION SILVER LIONS OR ELSE!!! (I warned you)</h2>
+    <a href="https://warthunder.com/en/" target="_blank" >Download War Thunder Now!</a>
   </div>
     <div class="flexbox">
     <cardSet
