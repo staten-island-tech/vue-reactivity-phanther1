@@ -5,7 +5,9 @@
         {{ item.name }}, {{ item.nation }} <br> Quantity: {{ item.quantity }} <br> Price: {{ item.price * item.quantity }} <br>
         <button @click="removeFromCart(index)">Remove</button>
       </h4>
-      <h3>Total: {{ calculateTotal() }} silver lions</h3>
+      <h3>Total Items: {{ calculateTotalQuantity() }}</h3>
+      <h3>Total Tanks (silver lions): {{ calculateTotal() }} </h3>
+      <button><RouterLink to="/cart">Just your Cart</RouterLink></button>
   </div>
 </template>
 
@@ -14,18 +16,33 @@ import { toRefs } from 'vue';
 import { store, removeFromCart } from '@/components/store';
 const { cart } = toRefs(store);
 
-const calculateTotal = () => {
-  return store.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+function calculateTotal() {
+  const totalPrice = store.cart.reduce((total, item) => total + item.price * item.quantity, 0);
+  if (totalPrice > 1000000) {
+    return "your soul";
+  } else {
+    return String(totalPrice);
+  }
+};
+
+
+const calculateTotalQuantity = () => {
+ return store.cart.reduce((total, item) => total + item.quantity, 0);
 };
 
 </script>
 
 <style scoped>
-.cart {
-display: flex;
-width: 20%;
-flex-direction: column;
 
-}
+  .cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    height: 100vh;
+    overflow-y: auto;
+  }
 
 </style>
